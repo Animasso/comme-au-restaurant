@@ -1,1 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Engagement&family=Fuzzy+Bubbles:wght@400;700&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #de2c4d;
+  --color-secondary: #fb923c;
+  --color-light-100: #cecefb;
+  --color-light-200: #a8b5db;
+  --color-gray-100: #9ca4ab;
+  --color-dark-100: #0f0d23;
+
+  --font-ayaka: "Akaya Kanadaka", serif;
+  --font-fuzzy: "Fuzzy Bubbles", serif;
+  --font-engagement: "Engagement", serif;
+}
+
+/* Définir des classes utilitaires personnalisées avec @utilities */
+@utility container {
+  @apply mt-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
