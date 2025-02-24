@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
-import NavBarMobile from "../NavBarMobile";
+import NavBarMobile from "./NavBarMobile";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import CARlogo from "../../assets/FoodPhotos/carLogo.png";

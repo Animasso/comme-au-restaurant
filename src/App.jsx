@@ -1,20 +1,22 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
+import Hero from "./components/Hero";
+import SectionPlat from "./components/SectionPlat";
+import ListDishes from "./components/ListDishes";
+
 const App = () => {
   return (
-    <div>
-      {/* <BrowserRouter> */}
+    <Router>
+      {" "}
+      {/* Router englobe maintenant tout */}
       <NavBar />
-      {/* <Routes>
-          <Route path="/" element={<ListEmployee />} />
-          <Route path="/add-new-employee" element={<NewEmployee />} />
-          <Route path="/update-employee/:id" element={<NewEmployee />} />
-
-        </Routes>
-        <Footer /> */}
-      {/* </BrowserRouter> */}
-    </div>
+      <Hero />
+      <SectionPlat />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/plats/:cuisine" element={<ListDishes />} />
+      </Routes>
+    </Router>
   );
 };
 
