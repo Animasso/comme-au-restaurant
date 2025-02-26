@@ -22,7 +22,7 @@ const NavBarMobile = ({ setIsOpen }) => {
             <a
               href={item.link}
               className=" uppercase hover:text-black transition duration-300"
-              onClick={() => setIsOpen(false)} // Ferme le menu après un clic
+              onClick={() => setIsOpen(false)}
             >
               {item.title}
             </a>

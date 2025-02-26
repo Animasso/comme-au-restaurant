@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 const SectionPlat = () => {
   const cuisine = [
-    { id: 1, name: "Africaine", image: Afrique, path: "/plats/africaine" },
-    { id: 2, name: "Asiatique", image: Asiatique, path: "/plats/asiatique" },
-    { id: 3, name: "Indienne", image: Indienne, path: "/plats/indienne" },
-    { id: 4, name: "Française", image: Francais, path: "/plats/française" },
+    { id: 1, name: "Africaine ", image: Afrique, path: "/plats/Africaine" },
+    { id: 2, name: "Asiatique", image: Asiatique, path: "/plats/Asiatique" },
+    { id: 3, name: "Indienne", image: Indienne, path: "/plats/Indienne" },
+    { id: 4, name: "Française", image: Francais, path: "/plats/Française" },
   ];
   const navigate = useNavigate();
   return (
