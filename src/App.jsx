@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
-import Hero from "./components/Hero";
-import SectionPlat from "./components/SectionPlat";
-import ListDishes from "./components/ListDishes";
+import ListDishes from "./pages/ListDishes";
 import Home from "./pages/Home";
 
 const App = () => {

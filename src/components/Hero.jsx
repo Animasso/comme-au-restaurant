@@ -4,7 +4,7 @@ import Banner from "../assets/FoodPhotos/banner.webp";
 const BrandInfo = () => {
   return (
     <section
-      id="#propos"
+      id="propos"
       className="mt-26 bg-secondary/10 overflow-hidden container grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0 md:py-24 py-14"
     >
       {/* Image */}

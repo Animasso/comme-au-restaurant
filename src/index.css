@@ -14,7 +14,12 @@
   --font-engagement: "Engagement", serif;
 }
 
-/* Définir des classes utilitaires personnalisées avec @utilities */
 @utility container {
   @apply mt-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+@utility flex-center {
+  @apply flex justify-center items-center;
+}
+@utility title {
+  @apply p-10 font-ayaka text-4xl font-semibold uppercase text-center;
 }

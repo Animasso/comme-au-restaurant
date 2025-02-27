@@ -5,8 +5,9 @@ const NavBarMobile = ({ setIsOpen }) => {
   const NavbarMenu = [
     { id: 1, title: "ACCUEIL", link: "/" },
     { id: 2, title: "A PROPOS", link: "#propos" },
-    { id: 3, title: "PLATS", link: "#plats" },
-    { id: 4, title: "CONTACT", link: "#contact" },
+    { id: 3, title: "CUISINES", link: "#cuisines" },
+    { id: 4, title: "SERVICES", link: "#services" },
+    { id: 5, title: "CONTACT", link: "#contact" },
   ];
   return (
     <motion.div

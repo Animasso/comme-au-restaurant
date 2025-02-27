@@ -32,7 +32,7 @@ const ListDishes = () => {
               <p className=" font-fuzzy text-gray-600">{dish.description}</p>
               <div className=" flex justify-between">
                 <p className="text-gray-900 font-bold mt-2">{dish.price} €</p>
-                <p className=" flex  justify-center items-center text-red-500 text-sm">
+                <p className=" flex justify-center items-center text-red-500 text-sm">
                   {dish.epice > 0 ? `🌶️ Épicé: ${dish.epice}` : "Non épicé"}
                 </p>
               </div>

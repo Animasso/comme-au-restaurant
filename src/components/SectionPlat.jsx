@@ -13,12 +13,9 @@ const SectionPlat = () => {
   ];
   const navigate = useNavigate();
   return (
-    <section className=" container bg-secondary/30">
-      <h2 className=" p-10 font-ayaka text-4xl font-semibold uppercase text-center">
-        {" "}
-        Nos cuisines
-      </h2>
-      <div className=" py-7 cursor-pointer  flex flex-wrap items-center  gap-5 justify-center">
+    <section id="cuisines" className=" container bg-secondary/30">
+      <h2 className="title"> Nos cuisines</h2>
+      <div className=" py-7 cursor-pointer  flex flex-wrap items-center gap-5 justify-center">
         {cuisine.map((item, i) => (
           <motion.div
             initial={{ y: -100, opacity: 0 }}
