@@ -17,7 +17,7 @@ const NavBarMobile = ({ setIsOpen }) => {
       exit={{ y: -100, opacity: 0 }}
       className="md:hidden absolute top-25 left-0 w-full bg-secondary/15 text-white rounded-2xl shadow-lg"
     >
-      <ul className="flex flex-col text-secondary items-center space-y-4 py-4">
+      <ul className="flex flex-col font-bold text-gray-800 items-center space-y-4 py-4">
         {NavbarMenu.map((item) => (
           <li key={item.id}>
             <a

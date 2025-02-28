@@ -4,17 +4,17 @@ import TraiteurAsiatique from "../assets/servicesFood/traiteur-asiatique.webp";
 import TraiteurI from "../assets/servicesFood/traiteur-indien.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
-// Import Swiper styles
+
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
 const Services = () => {
   return (
-    <section id="services" className="container mt-32 bg-secondary/50 p-6">
+    <section id="services" className="container mt-32 bg-secondary/30 p-6">
       <h2 className="title text-center mb-6">Nos Services Extérieurs</h2>
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-        {/* Colonne gauche : Swiper avec les images */}
+        {/*images */}
         <motion.div
           initial={{ opacity: 0, x: -200 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -57,7 +57,7 @@ const Services = () => {
           </Swiper>
         </motion.div>
 
-        {/* Colonne droite : Texte explicatif */}
+        {/* Texte  */}
         <div className="w-full md:w-1/2 text-left">
           <p>
             Vous organisez un mariage, une grande fête familiale ou encore un

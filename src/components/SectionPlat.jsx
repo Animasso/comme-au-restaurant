@@ -13,7 +13,7 @@ const SectionPlat = () => {
   ];
   const navigate = useNavigate();
   return (
-    <section id="cuisines" className=" container bg-secondary/30">
+    <section id="cuisines" className=" container bg-secondary/20">
       <h2 className="title"> Nos cuisines</h2>
       <div className=" py-7 cursor-pointer  flex flex-wrap items-center gap-5 justify-center">
         {cuisine.map((item, i) => (
