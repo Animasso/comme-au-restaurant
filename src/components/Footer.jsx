@@ -11,9 +11,7 @@ const Footer = () => {
       >
         {/* logo */}
         <div className="flex items-center gap-2 text-2xl font-bold uppercase">
-          <p p className=" font-ayaka">
-            Comme Au Restaurant
-          </p>
+          <p className=" font-ayaka">Comme Au Restaurant</p>
         </div>
         {/* social */}
         <div className=" text-3xl flex items-center gap-4 mt-6 text-white">
