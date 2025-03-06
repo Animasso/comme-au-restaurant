@@ -9,7 +9,7 @@ const CartModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-opacity-30 backdrop-blur-md flex justify-center items-center z-50">
-      <div className="bg-white p-6 rounded-2xl shadow-2xl w-96 transform transition-all duration-300">
+      <div className="bg-white p-6 rounded-2xl shadow-2xl w-[500px] transform transition-all duration-300">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 text-center">
           🛒 Votre Panier
         </h2>
@@ -17,29 +17,43 @@ const CartModal = ({ isOpen, onClose }) => {
         {cart.length === 0 ? (
           <p className="text-center text-gray-500">Votre panier est vide.</p>
         ) : (
-          <ul className="divide-y divide-gray-200">
-            {cart.map((item) => (
-              <li
-                key={item.id}
-                className="flex justify-between items-center py-2"
-              >
-                <span className="font-medium text-gray-800">
-                  {item.name} x {item.quantity}
-                </span>
-                <span className="text-gray-700">
-                  {item.price * item.quantity} €
-                </span>
-                <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="p-2 hover:bg-gray-100 rounded-full"
-                >
-                  <FaTrash className="text-red-500" />
-                </button>
-              </li>
-            ))}
-          </ul>
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table className="w-full border-collapse border border-gray-200">
+              <thead className="bg-gray-100 text-gray-700">
+                <tr>
+                  <th className="p-2 border border-gray-300">Plat</th>
+                  <th className="p-2 border border-gray-300">Quantité</th>
+                  <th className="p-2 border border-gray-300">Prix</th>
+                  <th className="p-2 border border-gray-300">Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {cart.map((item) => (
+                  <tr key={item.id} className="text-center">
+                    <td className="p-2 border border-gray-300">{item.name}</td>
+                    <td className="p-2 border border-gray-300">
+                      {item.quantity}
+                    </td>
+                    <td className="p-2 border border-gray-300">
+                      {(item.price * item.quantity).toFixed(2)} €
+                    </td>
+                    <td className="p-2 border border-gray-300">
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="p-2 hover:bg-gray-100 rounded-full"
+                      >
+                        <FaTrash className="text-red-500" />
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
 
+        {/* Total et Boutons */}
         <p className="text-lg font-semibold mt-4 text-gray-900 text-center">
           Total: {total.toFixed(2)} €
         </p>
