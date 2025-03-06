@@ -2,11 +2,12 @@ import { useState } from "react";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import NavBarMobile from "./NavBarMobile";
 import { motion } from "framer-motion";
+import { useCart } from "../../components/Context/CartContext";
 import { AnimatePresence } from "framer-motion";
 import CARlogo from "../../assets/FoodPhotos/carLogo.png";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const { cart } = useCart();
   const NavbarMenu = [
     { id: 1, title: "ACCUEIL", link: "/" },
     { id: 2, title: "A PROPOS", link: "#propos" },
@@ -54,9 +55,16 @@ const NavBar = () => {
               <span className="absolute left-0 bottom-[-4px] w-full h-[3px] bg-secondary scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
             </li>
           ))}
-          <button className="relative">
-            <FaShoppingCart className=" text-secondary text-3xl hover:bg-secondary hover:text-white rounded-full p-2 cursor-pointer" />
-          </button>
+          <div>
+            <button className="relative">
+              <FaShoppingCart className=" text-secondary text-3xl hover:bg-secondary hover:text-white rounded-full p-2 cursor-pointer" />
+            </button>
+            {cart.length > 0 && (
+              <div className="absolute top-12 right-33 transform translate-x-1/2 -translate-y-1/2 bg-red-600 text-white text-xs flex items-center justify-center rounded-full w-5 h-5">
+                <p>{cart.length}</p>
+              </div>
+            )}
+          </div>
         </ul>
 
         {/* Menu burger (mobile) */}

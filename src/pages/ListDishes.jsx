@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
 import { DishesByCuisine } from "../utils/data/data";
 import { motion } from "framer-motion";
-
+import { useCart } from "../components/Context/CartContext";
+import { useState } from "react";
+import CartModal from "../components/CartModal";
 const ListDishes = () => {
   const { cuisine } = useParams();
   const dishes = DishesByCuisine[cuisine] || [];
-
+  const { addToCart } = useCart();
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <section className="container mx-auto mt-28 p-5">
       <h2 className=" font-ayaka text-4xl font-semibold text-center mb-6 capitalize">
         {cuisine}
       </h2>
+      <CartModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {dishes.length > 0 ? (
           dishes.map((dish, i) => (
@@ -21,11 +25,25 @@ const ListDishes = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               className="shadow-lg rounded-lg overflow-hidden bg-white p-4"
             >
-              <img
-                src={dish.image}
-                alt={dish.name}
-                className="w-full h-56 object-cover rounded-md mb-3"
-              />
+              <div className=" relative">
+                <img
+                  src={dish.image}
+                  alt={dish.name}
+                  className="w-full h-56 object-cover rounded-md mb-3"
+                />
+                <div className="absolute top-0 right-0 p-2 hover:scale-105 transition  bg-red-600 text-white rounded-xl text-sm">
+                  <button
+                    className="cursor-pointer"
+                    onClick={() => {
+                      addToCart(dish);
+                      setModalOpen(true);
+                    }}
+                  >
+                    Commander
+                  </button>
+                </div>
+              </div>
+
               <h3 className="text-xl font-ayaka tracking-wider font-semibold">
                 {dish.name}
               </h3>
