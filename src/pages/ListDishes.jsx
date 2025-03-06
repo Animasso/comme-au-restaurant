@@ -2,19 +2,18 @@ import { useParams } from "react-router-dom";
 import { DishesByCuisine } from "../utils/data/data";
 import { motion } from "framer-motion";
 import { useCart } from "../components/Context/CartContext";
-import { useState } from "react";
-import CartModal from "../components/CartModal";
+
 const ListDishes = () => {
   const { cuisine } = useParams();
   const dishes = DishesByCuisine[cuisine] || [];
   const { addToCart } = useCart();
-  const [isModalOpen, setModalOpen] = useState(false);
+
   return (
     <section className="container mx-auto mt-28 p-5">
       <h2 className=" font-ayaka text-4xl font-semibold text-center mb-6 capitalize">
         {cuisine}
       </h2>
-      <CartModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {dishes.length > 0 ? (
           dishes.map((dish, i) => (
@@ -36,7 +35,6 @@ const ListDishes = () => {
                     className="cursor-pointer"
                     onClick={() => {
                       addToCart(dish);
-                      setModalOpen(true);
                     }}
                   >
                     Commander

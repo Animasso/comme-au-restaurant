@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaShoppingCart } from "react-icons/fa";
-const NavBarMobile = ({ setIsOpen }) => {
+const NavBarMobile = ({ setIsOpen, setModalOpen, totalItems }) => {
   const NavbarMenu = [
     { id: 1, title: "ACCUEIL", link: "/" },
     { id: 2, title: "A PROPOS", link: "#propos" },
@@ -29,9 +29,17 @@ const NavBarMobile = ({ setIsOpen }) => {
             </a>
           </li>
         ))}
-        <button>
-          <FaShoppingCart className="text-3xl hover:bg-primary hover:text-white rounded-full p-2" />
-        </button>
+        <div className="relative">
+          <button onClick={() => setModalOpen(true)} className="relative">
+            {" "}
+            <FaShoppingCart className="text-secondary text-3xl hover:bg-secondary hover:text-white rounded-full p-2 cursor-pointer" />
+          </button>
+          {totalItems > 0 && (
+            <div className="absolute -top-2 -right-2 bg-red-600 text-white text-xs flex items-center justify-center rounded-full w-5 h-5">
+              <p>{totalItems}</p>
+            </div>
+          )}
+        </div>
       </ul>
     </motion.div>
   );
