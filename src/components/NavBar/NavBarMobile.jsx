@@ -15,7 +15,7 @@ const NavBarMobile = ({ setIsOpen, setModalOpen, totalItems }) => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", damping: 12 }}
       exit={{ y: -100, opacity: 0 }}
-      className="md:hidden absolute top-25 left-0 w-full bg-secondary/15 text-white rounded-2xl shadow-lg"
+      className="md:hidden absolute top-25 left-0 w-full bg-white  text-white rounded-2xl shadow-lg"
     >
       <ul className="flex flex-col font-bold text-gray-800 items-center space-y-4 py-4">
         {NavbarMenu.map((item) => (
